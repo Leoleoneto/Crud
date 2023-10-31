@@ -21,6 +21,9 @@ const tempClient = {
 /////////// CRUD - create read update delete
 
 const createClient = (client) => {
+    const db_client = JSON.parse(localStorage.getItem('db_client'))
+    console.log (db_client)
+    db_client.push (client)
     localStorage.setItem ('db_client', JSON.stringify(client))
 
 }
