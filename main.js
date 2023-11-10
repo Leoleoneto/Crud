@@ -19,12 +19,19 @@ const tempClient = {
     cidade: 'santos'
 }
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client)')) ?? []
-constsetLocalStorage = () => localStorage.setItem("db_client", JSON.stringify(db_client))
+const setLocalStorage = () => localStorage.setItem("db_client", JSON.stringify(db_client))
+
 /////////// CRUD - create read update delete
 
-//// create
 
-constreadClient = () => getLocalStorage()
+const updateClient = (client) => {
+    const db_client = readClient()
+}
+
+const readClient = () => getLocalStorage()
+
+
+
 const createClient = (client) => {
     const db_client = JSON.parse(localStorage.getItem('db_client'))
     console.log (db_client)
@@ -32,6 +39,7 @@ const createClient = (client) => {
     setlocalStorage (db_client)
 
 }
+
 
 // Eventos
     document.getElementById('cadastrarCliente')
