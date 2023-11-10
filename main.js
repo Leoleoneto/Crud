@@ -18,13 +18,18 @@ const tempClient = {
     celular:'01199560345',
     cidade: 'santos'
 }
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client)')) ?? []
+constsetLocalStorage = () => localStorage.setItem("db_client", JSON.stringify(db_client))
 /////////// CRUD - create read update delete
 
+//// create
+
+constreadClient = () => getLocalStorage()
 const createClient = (client) => {
     const db_client = JSON.parse(localStorage.getItem('db_client'))
     console.log (db_client)
     db_client.push (client)
-    localStorage.setItem ('db_client', JSON.stringify(client))
+    setlocalStorage (db_client)
 
 }
 
@@ -34,3 +39,5 @@ const createClient = (client) => {
     
     document.getElementById('modalClose')
     .addEventListener('click', closeModal)
+
+    
