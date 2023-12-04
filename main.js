@@ -24,7 +24,7 @@ const setLocalStorage = (db_client) => localStorage.setItem("db_client", JSON.st
 /////////// CRUD - create read update delete
 
 //delete
-const delete = (index) => {
+const deleteClient = (index) => {
     const db_client = readClient()
     db_client.splice(index, 1)
     setLocalStorage (db_client)
@@ -43,10 +43,9 @@ const readClient = () => getLocalStorage()
 //create
 
 const createClient = (client) => {
-    const db_client = JSON.parse(localStorage.getItem('db_client'))
-    console.log (db_client)
+    const db_client = getLocalStorage()
     db_client.push (client)
-    setlocalStorage (db_client)
+    setLocalStorage (db_client)
 
 }
 
