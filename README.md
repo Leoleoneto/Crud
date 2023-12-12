@@ -2,5 +2,5 @@
 
 Id mantido em letra minuscula
 
-# Crud Sisten &copy;
+# Crud &copy;
 Sistema CRUD para cadastro de clientes 
