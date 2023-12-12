@@ -1,2 +1,6 @@
+# Documentaçao
+
+Id mantido em letra minuscula
+
 # Crud
-Sistema crud para cadastro de clientes
+Sistema CRUD para cadastro de clientes &copy.
