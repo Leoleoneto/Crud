@@ -49,6 +49,23 @@ const createClient = (client) => {
 
 }
 
+const isValidFilds = () => {
+   return document.getElementById ('form').reportValidity() // Funçao que retorna Tru para todos os requisitos do HTML
+
+}
+
+// Interaçao com Layout
+const saveClient = () => {
+    if (isValidFilds()) {
+        const client = {
+            nome: document.getElementById('nome').value,
+            email: document.getElementById('email').value,
+            celular: document.getElementById('celular').value,
+            cidade: document.getElementById('cidade').value,
+        }
+        createClient(client)
+    }
+}
 
 // Eventos
     document.getElementById('cadastrarCliente')
@@ -56,5 +73,8 @@ const createClient = (client) => {
     
     document.getElementById('modalClose')
     .addEventListener('click', closeModal)
+
+    document.getElementById('salvar')
+    .addEventListener('click', saveClient)
 
     
