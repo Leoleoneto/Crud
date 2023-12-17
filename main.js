@@ -3,14 +3,16 @@
 const openModal = () => document.getElementById('modal')
     .classList.add('active')
 
-const closeModal = () => document.getElementById('modal')
-    .classList.remove('active')
+const closeModal = () => {
+    clearFilds()
+    document.getElementById('modal').classList.remove('active')
+}
 
-document.getElementById('cadastrarCliente')
-    .addEventListener('click', openModal)
+// document.getElementById('cadastrarCliente')
+//     .addEventListener('click', openModal)
 
-document.getElementById('modalClose')
-    .addEventListener('click', closeModal)
+// document.getElementById('modalClose')
+//     .addEventListener('click', closeModal)
 
 const tempClient = {
     name: 'ana',
@@ -55,6 +57,12 @@ const isValidFilds = () => {
 }
 
 // Interaçao com Layout
+
+const clearFilds = () => {
+    const filds = document.querySelectorAll('.modal-field')
+    fields.forEach (field => field.value = "")
+
+}
 const saveClient = () => {
     if (isValidFilds()) {
         const client = {
@@ -64,6 +72,9 @@ const saveClient = () => {
             cidade: document.getElementById('cidade').value,
         }
         createClient(client)
+        closeModal()
+
+        
     }
 }
 
